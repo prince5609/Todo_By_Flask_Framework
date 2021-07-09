@@ -1,0 +1,40 @@
+{% extends "Base.html" %}
+{% block title %}
+REGISTRATION PAGE
+{% endblock %}
+{% block content %}
+<br>
+<body class="text-center">
+   <div class="container">
+      <form method="POST" class="form-register" style="color:black; font-weight:bold">
+         {{ form.hidden_tag() }}
+         <h1 class="h3 mb-3 font-weight-bold">
+            Please Create Your Account
+         </h1>
+         <br>
+         {{ form.username.label() }}
+         {{ form.username(class="form-control", placeholder="User Name") }}
+         {{ form.email_address.label() }}
+         {{ form.email_address(class="form-control", placeholder="Email Address") }}
+         {{ form.password1.label() }}
+         {{ form.password1(class="form-control", placeholder="Password") }}
+         {{ form.password2.label() }}
+         {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+         <br>
+         <div class="checkbox mb-3">
+            <h5>Already Have An Account?</h5>
+            <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+         </div>
+         {{ form.submit(class="btn btn-lg btn-block btn-primary")}}
+      </form>
+   </div>
+</body>
+{% endblock %}
+{% block style %}
+body{
+background-repeat:no-repeat;
+background-attached:fixed;
+background-size:cover;
+background-image:url({{url_for("static",filename="todo1.jpg")}})
+}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "Base.html" %}
+{% block title %}
+HOME
+{% endblock %}
+{% block content %}
+<br>
+<h1 style="color:#5499C7;  font-weight:bold; margin-left:700px">Tired Of Remembering</h1>
+<br>
+<h1 style="color:#B52F90;  font-weight:bold; margin-left:800px">Now, Don't Worry</h1>
+<h1 style="color:#CD5C5C;  font-weight:bold; margin-left:420px; margin-top:120px">Write Here</h1>
+<h1 style="color:#1E5FD4 ;  font-weight:bold; margin-left:420px">&</h1>
+<h1 style="color:#CD5C5C;  font-weight:bold; margin-left:420px">Relax.</h1>
+<div class="text-center" style="margin-top:80px">
+   <a class="btn btn-primary btn-lg mx-5" href="{{ url_for('about_page')}}">About</a>
+   <a class="btn btn-success btn-lg" href="{{ url_for('todo_page')}}">Get Started</a>
+</div>
+{% endblock %}
+{% block style %}
+body{
+background-repeat:no-repeat;
+background-attached:fixed;
+background-size:cover;
+background-image:url({{url_for("static",filename="todo3.jpg")}})
+}
+{% endblock %}

@@ -1,0 +1,41 @@
+<style>
+  .modal-content {
+    background-color: #E18F20
+  }
+</style>
+
+<!-- More Info -->
+<div class="modal fade" id="Modal-Delete-{{ todo.sno }}"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">
+          <!-- -->
+            {{ todo.title }}
+        </h5>
+        <button type="button" class="close"
+                data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <form method="POST">
+              <h3 class="text-center">
+                Are You Sure You Want To Delete {{ todo.title }} ?
+              </h3>
+              <br>
+               <input id="todo" name="todo.title" type="hidden" value="{{todo.title}}">
+                <a href="/delete/{{todo.sno}}" type="button" class="btn btn-danger">Delete</a>
+            </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

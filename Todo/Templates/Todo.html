@@ -1,0 +1,60 @@
+{% extends "Base.html" %}
+{% block title %}
+TODO
+{% endblock %}
+{% block content %}
+<br>
+<body class="text-center">
+   <div class="container">
+      <form method="POST" class="form-todo" style="color:black; font-weight:bold">
+         {{ form.hidden_tag() }}
+         <h1 class="display-5 h3 mb-3 font-weight-bold">
+            Add Your Todo Here
+         </h1>
+         <br>
+         {{ form.title.label() }}
+         {{ form.title(class="form-control", placeholder="Title") }}
+         {{ form.description.label() }}
+         {{ form.description(class="form-control", placeholder="Description") }}
+         <br>
+         {{ form.submit(class="btn btn-lg btn-block btn-success")}}
+      </form>
+   </div>
+</body>
+<br>
+<br>
+<h1>Your Todos</h1>
+<div class="container">
+   <table class="table table-dark table-striped">
+      <thead>
+         <tr>
+            <th scope="col">Sno</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date/Time</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for todo in todos %}
+         {% include 'includes/Delete_Modals.html' %}
+         <tr>
+            <th scope="row" style="font-weight:bold">{{ loop.index }}</th>
+            <td style="font-weight:bold">{{ todo.title }}</td>
+            <td style="font-weight:bold">{{ todo.description }}</td>
+            <td style="font-weight:bold">{{ todo.date_created }}</td>
+            <td>
+               <a href="/delete/{{todo.sno}}" type="button" class="btn btn-danger" data-toggle="modal" data-target="#Modal-Delete-{{ todo.sno }}">Delete</a>
+               <a href="/update/{{todo.sno}}" type="button" class="btn btn-dark">Update</a>
+            </td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+</div>
+{% endblock %}
+{% block style %}
+body{
+background-color:#206FBB;
+color:black
+}
+{% endblock %}

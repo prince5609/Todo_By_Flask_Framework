@@ -1,0 +1,45 @@
+{% extends "Base.html" %}
+{% block title %}
+ABOUT
+{% endblock %}
+{% block content %}
+<h1 style="margin-left:50px">Welcome To Our Website--></h1>
+<div class="row" style="margin-right:280px; margin-left:250px; margin-top:100px; color:#2471A3">
+   <h5>* This App Is Design For Specially Those Who Are Busy In Their Daily Life And Have Lot's Of Work
+      So They Need To Remember All Things But Sometimes Unfortunately They Forget To Remember All Their Work Which Result In Somewhere Losses.
+   </h5>
+</div>
+<br>
+<div class="row" style="margin-right:250px; margin-left:250px; color:#2471A3">
+   <h5>* This WebSite Helps You To Add All Yours Todo So That You Can Check Which Work IS Left To Do.</h5>
+</div>
+<br>
+<div class="row" style="margin-right:250px; margin-left:250px; color:#2471A3">
+   <h5>* Create a Account So That We Can Serve You Better</h5>
+</div>
+<br>
+<div class="row" style="margin-right:250px; margin-left:250px; color:#2471A3">
+   <h5>* In Your Personal Account You Can Add, Update, Delete Your Todo's </h5>
+</div>
+<br>
+<div class="row" style="margin-right:250px; margin-left:250px; color:#2471A3">
+   <h5>* Date And Time Will Be Shown To Automatically At Which You Create Your Todos. </h5>
+</div>
+<br>
+<div class="row" style="margin-right:250px; margin-left:250px; color:#2471A3">
+   <h5>* All Your Data Is Completely Protected And Safe.</h5>
+</div>
+<br>
+<div class="container text-center" >
+   <a class="btn btn-primary btn-lg mx-5" href="{{ url_for('home_page')}}">Home</a>
+   <a class="btn btn-success btn-lg mx-5" href="{{ url_for('todo_page')}}">Get Started</a>
+</div>
+{% endblock %}
+{% block style %}
+body{
+background-repeat:no-repeat;
+background-attached:fixed;
+background-size:cover;
+background-image:url({{url_for("static",filename="todo4.jpg")}})
+}
+{% endblock %}
